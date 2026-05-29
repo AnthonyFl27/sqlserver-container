@@ -16,7 +16,7 @@ Este repositorio contiene un entorno preconfigurado de SQL Server 2025 ejecután
 ### 1. Clonar el repositorio
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/AnthonyFl27/sqlserver-container.git
 cd sqlserver-container
 ```
 
