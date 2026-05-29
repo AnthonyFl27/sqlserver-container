@@ -36,14 +36,9 @@ El archivo `.env` debe ser solo lectura:
 sudo chmod 600 .env
 ```
 
-Edita el archivo `.env` y configura las variables necesarias, como la contraseña de SQL Server:
-
-```env
-SA_PASSWORD=[password]
-
 ### 4. Iniciar los contenedores
 
-```bash
+```
 docker-compose up -d
 ```
 
