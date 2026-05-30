@@ -33,7 +33,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "/opt/mssql-tools18/bin/sqlcmd -S localhost -U mssql_admin -P 'Auth_2702#SQL_Dev!' -C",
+          '/opt/mssql-tools18/bin/sqlcmd -S localhost -U mssql_admin -P "$$ADMIN_PASSWORD" -C',
         ]
       interval: 15s
       timeout: 5s
