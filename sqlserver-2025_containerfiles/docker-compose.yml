@@ -4,21 +4,6 @@ services:
     container_name: sqlserver-2025
     # restart: unless-stopped
     restart: "no" # temporal
-    
-    # security options
-    security_opt:
-      - no-new-privileges:true
-    cap_drop:
-      - ALL
-    cap_add:
-      - CHOWN
-      - SETUID
-      - SETGID
-    user: "10001:10001"
-    read_only: true
-    tmpfs:
-      - /tmp
-      - /var/opt/mssql/run
     environment:
       ACCEPT_EULA: "Y"
       #MSSQL_PID: "${MSSQL_PID}"                   # sqlversion
