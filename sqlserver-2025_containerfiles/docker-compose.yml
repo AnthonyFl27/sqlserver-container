@@ -6,10 +6,9 @@ services:
     restart: "no" # temporal
     environment:
       ACCEPT_EULA: "Y"
-      #MSSQL_PID: "${MSSQL_PID}"                   # sqlversion
-      #MSSQL_LICENSE_KEY: "${MSSQL_LICENSE_KEY}"   # license key
-      SA_PASSWORD: "${SA_PASSWORD}" # sa password
       ADMIN_PASSWORD: "${ADMIN_PASSWORD}" # new user password
+      HEALTHY_CHECK_PASSWORD: "${HEALTHY_CHECK_PASSWORD}" # healthy check user password
+      HEALTHY_CHECK_USER: "${HEALTHY_CHECK_USER}" # healthy check user
       MSSQL_DATA_DIR: /var/opt/mssql/user_data
       MSSQL_LOG_DIR: /var/opt/mssql/user_logs
       MSSQL_BACKUP_DIR: /var/opt/mssql/backups
@@ -33,7 +32,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          '/opt/mssql-tools18/bin/sqlcmd -S localhost -U mssql_admin -P "$$ADMIN_PASSWORD" -C',
+          '/opt/mssql-tools18/bin/sqlcmd -S localhost -U ${HEALTHY_CHECK_USER} -P "${HEALTHY_CHECK_PASSWORD}" -C',
         ]
       interval: 15s
       timeout: 5s
