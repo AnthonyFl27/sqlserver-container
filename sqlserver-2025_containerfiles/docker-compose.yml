@@ -12,6 +12,7 @@ services:
       MSSQL_DATA_DIR: /var/opt/mssql/user_data
       MSSQL_LOG_DIR: /var/opt/mssql/user_logs
       MSSQL_BACKUP_DIR: /var/opt/mssql/backups
+      MSSQL_AGENT_ENABLED: true
     ports:
       - "3314:1433" # port
     volumes:
